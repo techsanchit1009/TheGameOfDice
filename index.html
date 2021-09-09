@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Game of Dice</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="header">The Game of Dice</div>
+    <div class="user-input-wrapper" id="user-input-box">
+      <label for="player-count">Player Count:</label>
+      <input type="text" id="player-count" placeholder="Enter total player count"/>
+      <label for="max-score">Max Score:</label>
+      <input type="text" id="max-score" placeholder="Enter max score to achieve"/>
+      <input type="submit" id="start-btn" value="Start the game" />
+    </div>
+    <div id="game-section" style="display: none">
+      <div style="margin: 10px 0; font-weight: bold;">Score to achieve: <span id="max-score-text"></span></div>
+      <div id="players-list">
+        <strong>Player sequence:</strong>
+        <ul id="player-sequence-list"></ul>
+      </div>
+      <div>
+        <div id="rolling-status">
+          <div id="current-turn"><span id="current-player-id"></span> its your turn</div>
+          <p id="roll-dice">Press 'r' to roll the dice...</p>
+        </div>
+      </div>
+      <div id="result-section">
+        <div id="number-rolled">Number rolled by <span id="rolled-by"></span>: <span id="rolled-number"></span></div>
+        <!-- Leaderboard Table-->
+        <table id="leaderboard-table">
+          <tr>
+            <th>Rank</th>
+            <th>Player Name</th>
+            <th>Score</th>
+          </tr>
+          <tbody id="table-body">
+          </tbody>
+        </table>
+        <p id="table-note">*Calculated Rank will be displayed at the end of the game!</p>
+        <div id="rank-section">
+          <h2>Ranks</h2>
+          <ol id="ranking-list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="./index.js"></script>
+</html>
