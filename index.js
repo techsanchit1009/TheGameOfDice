@@ -130,6 +130,7 @@ function rollDice(e) {
       document.getElementById('rolled-number').innerText = numberRolled;
       document.getElementById('leaderboard-table').style.display = 'block';
       document.getElementById('table-note').style.display = 'block';
+      document.getElementById('hint-text').style.display = 'none';
 
       scoresList[currentPlayer].score += numberRolled;
 
@@ -141,6 +142,9 @@ function rollDice(e) {
         } else {
           nextPlayerIndex = currentPlayerIndex + 1;
         }
+      } else {
+        document.getElementById('hint-text').style.display = 'block';
+        document.getElementById('player-name').innerText = currentPlayer;
       }
       // On game completion
       if (playerSequence.length === 0) {
